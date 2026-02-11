@@ -31,7 +31,7 @@ const chatHistory = [
 const chatHistoryLimit = [
     {
         role: "model",
-        parts: [{ text: `6` }],
+        parts: [{ text: `chuỗi 1` }],
     }
 ];
 
