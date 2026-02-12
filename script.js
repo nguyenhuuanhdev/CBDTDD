@@ -9,7 +9,7 @@ const closeChatbot = document.querySelector("#close-chatbot");
 
 
 // Api setup
-const API_KEY = ""; 
+const API_KEY = "";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
 const userData = {
@@ -31,7 +31,7 @@ const chatHistory = [
 const chatHistoryLimit = [
     {
         role: "model",
-        parts: [{ text: `chuỗi 1` }],
+        parts: [{ text: `chuỗi 2` }],
     }
 ];
 
@@ -48,7 +48,7 @@ const createMessageElement = (content, ...classes) => {
 // Generate bot response using API
 const generateBotResponse = async (incomingMessageDiv) => {
     const messageElement = incomingMessageDiv.querySelector(".message-text");
-    
+
     // chatHistory.push({
     //     role: "user",
     //     parts: [{ text: `Using the details provided above, please address this query: ${userData.message}` }, ...(userData.file.data ? [{ inline_data: userData.file }] : [])],
@@ -58,7 +58,7 @@ const generateBotResponse = async (incomingMessageDiv) => {
         role: "user",
         parts: [{ text: userData.message }, ...(userData.file.data ? [{ inline_data: userData.file }] : [])],
     });
-    
+
     // API request options
     const requestOptions = {
         method: "POST",
@@ -157,8 +157,8 @@ fileInput.addEventListener("change", (e) => {
             data: base64String,
             mime_type: file.type
         };
-        
-        fileInput.value = ""; 
+
+        fileInput.value = "";
     };
 
     reader.readAsDataURL(file);
